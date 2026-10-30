@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" role="img" aria-label="Swanwright">
+  <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F7E7B6"/>
+      <stop offset="0.5" stop-color="#E7C564"/>
+      <stop offset="1" stop-color="#B8933B"/>
+    </linearGradient>
+    <radialGradient id="bg" cx="0.5" cy="0.42" r="0.75">
+      <stop offset="0" stop-color="#132742"/>
+      <stop offset="1" stop-color="#0A1627"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="400" rx="72" fill="url(#bg)"/>
+  <circle cx="200" cy="200" r="150" fill="none" stroke="url(#gold)" stroke-width="2" opacity="0.35"/>
+  <!-- swan body + neck, single elegant line -->
+  <g fill="none" stroke="url(#gold)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M110 288
+             C 120 232, 158 206, 210 206
+             C 258 206, 286 230, 296 262
+             C 300 274, 296 286, 284 290"/>
+    <!-- neck -->
+    <path d="M210 206
+             C 176 196, 160 168, 166 138
+             C 170 116, 186 100, 208 100
+             C 226 100, 238 112, 240 126"/>
+    <!-- head + beak -->
+    <path d="M240 126
+             C 241 136, 236 144, 226 146
+             L 266 132
+             L 240 142"/>
+    <!-- wing feather lines -->
+    <path d="M168 258 C 196 236, 236 234, 268 252" stroke-width="4.5" opacity="0.9"/>
+    <path d="M160 274 C 196 250, 244 248, 280 268" stroke-width="4" opacity="0.7"/>
+  </g>
+  <!-- eye -->
+  <circle cx="223" cy="128" r="4" fill="#0A1627"/>
+  <!-- water line -->
+  <path d="M96 302 C 160 316, 240 316, 304 302" fill="none" stroke="url(#gold)" stroke-width="4" stroke-linecap="round" opacity="0.6"/>
+</svg>

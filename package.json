@@ -1,0 +1,29 @@
+{
+  "name": "swanwright",
+  "private": true,
+  "version": "0.1.6",
+  "type": "module",
+  "description": "Swanwright \u2014 lapisan OpenCode non-invasif: orchestrator tipis, 6 sektor, done-gate berbukti, skill lazy.",
+  "engines": {
+    "node": ">=22.6"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types tests/suite.mjs",
+    "scan": "node --experimental-strip-types scripts/scan.ts",
+    "validate": "node scripts/validate.mjs",
+    "enable-pack": "node scripts/enable-pack.mjs",
+    "sync-upstream": "node scripts/sync-upstream.mjs",
+    "skills:index": "node scripts/skill-index.mjs --if-changed",
+    "skills:query": "node scripts/skill-query.mjs",
+    "skills:metrics": "node scripts/skill-metrics.mjs",
+    "policy": "node scripts/gen-policy.mjs",
+    "doctor": "bash scripts/doctor.sh"
+  },
+  "devDependencies": {
+    "ajv": "8.20.0",
+    "yaml": "2.9.1"
+  },
+  "optionalDependencies": {
+    "sqlite-vec": "0.1.9"
+  }
+}
