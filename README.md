@@ -1,18 +1,89 @@
 <p align="center">
-  <img src="assets/banner.png" alt="Swanwright" width="920"/>
+  <img src="assets/banner.png" alt="Swanwright — The Elegant AI Coding Harness" width="100%"/>
+</p>
+
+<h3 align="center"><em>Anggun di permukaan. Presisi di kedalaman.</em></h3>
+
+<p align="center">
+  Harness AI coding premium untuk <b>OpenCode v2.2.4</b> — orkestrasi tipis, <b>82 skill</b>, <b>10 agen</b>, dan MCP per sektor yang aman secara default.
 </p>
 
 <p align="center">
-  <em>Elegant AI coding harness — OpenCode v2.2.4 · 9router · skill query yang ramping</em>
+  <a href="https://github.com/fahmi0812/Swanwright/releases/tag/v0.1.6"><img src="https://img.shields.io/badge/version-0.1.6-C9A227?style=for-the-badge&labelColor=FFFFFF" alt="version"/></a>
+  <a href="https://github.com/anomalyco/opencode/releases/tag/v2.2.4"><img src="https://img.shields.io/badge/OpenCode-v2.2.4-D4AF37?style=for-the-badge&labelColor=FFFFFF" alt="opencode"/></a>
+  <img src="https://img.shields.io/badge/skills-82-E8D9B0?style=for-the-badge&labelColor=FFFFFF" alt="skills"/>
+  <img src="https://img.shields.io/badge/agents-10-E8D9B0?style=for-the-badge&labelColor=FFFFFF" alt="agents"/>
+  <img src="https://img.shields.io/badge/tests-83%2F83-C9A227?style=for-the-badge&labelColor=FFFFFF" alt="tests"/>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-0B1B33?style=for-the-badge&labelColor=FFFFFF" alt="license"/></a>
 </p>
 
 <p align="center">
-  <a href="https://github.com/fahmi0812/Swanwright/releases/tag/v0.1.6"><img src="https://img.shields.io/badge/version-0.1.6-C9A227?style=for-the-badge&labelColor=0A1627" alt="version"/></a>
-  <a href="https://github.com/anomalyco/opencode/releases/tag/v2.2.4"><img src="https://img.shields.io/badge/OpenCode-v2.2.4-0A1627?style=for-the-badge&labelColor=132742&logoColor=white" alt="opencode"/></a>
-  <img src="https://img.shields.io/badge/skills-82_active-E7C564?style=for-the-badge&labelColor=0A1627" alt="skills"/>
-  <img src="https://img.shields.io/badge/MCP-sector_deny--by--default-F7E7B6?style=for-the-badge&labelColor=0A1627" alt="mcp"/>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-CBD5E1?style=for-the-badge&labelColor=0A1627" alt="license"/></a>
+  <a href="#instalasi-satu-baris"><b>Instalasi</b></a> &nbsp;·&nbsp;
+  <a href="#mengapa-swanwright"><b>Mengapa Swanwright</b></a> &nbsp;·&nbsp;
+  <a href="#arsitektur"><b>Arsitektur</b></a> &nbsp;·&nbsp;
+  <a href="#verifikasi"><b>Verifikasi</b></a>
 </p>
+
+<br/>
+
+<div align="center">
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/fahmi0812/Swanwright/main/install.sh | bash
+```
+
+<sub>Satu baris. Idempoten. Checksum SHA256 terpin.</sub>
+
+</div>
+
+<br/>
+
+---
+
+## Mengapa Swanwright
+
+<table>
+<tr>
+<td width="33%" valign="top">
+
+### ◇ Ramping
+Orchestrator tipis mendelegasikan ke sub-agen sektor. Skill dimuat **lazy** — konteks tetap bersih.
+
+</td>
+<td width="33%" valign="top">
+
+### ◇ Tepat
+Skill Query Layer: SQLite FTS5 BM25 + RRF, lalu satu panggilan 9router memilih ≤5 skill yang relevan.
+
+</td>
+<td width="33%" valign="top">
+
+### ◇ Aman
+MCP **deny-by-default** per sektor, plugin guard pemblokir push ke `main`, token hanya di `secrets.env` (`chmod 600`).
+
+</td>
+</tr>
+<tr>
+<td valign="top">
+
+### ◇ Berbukti
+Done-gate FACT / JUDGMENT, osv-scanner & gitleaks opsional. Selesai berarti terbukti.
+
+</td>
+<td valign="top">
+
+### ◇ Teruji
+**83/83** test lulus. `doctor` memverifikasi instalasi end-to-end hingga **0 FAIL**.
+
+</td>
+<td valign="top">
+
+### ◇ Siap pakai
+Linux · macOS · WSL2. Node, OpenCode, codebase-memory-mcp, dan uv dipasang otomatis.
+
+</td>
+</tr>
+</table>
 
 ---
 
@@ -41,7 +112,7 @@ Installer **idempoten**, mem-pin SHA256 + mencocokkan file checksum rilis untuk 
 
 ---
 
-## Fitur
+## Fitur unggulan
 
 | | |
 |---|---|
@@ -136,15 +207,6 @@ npm run skills:metrics
 | Opsional | `osv-scanner` v2.7.0 · `gitleaks` v8.30.1 · `sqlite3` CLI · Docker (gateway) |
 
 Selalu `source ~/.swanwright/env.sh` sebelum menjalankan `opencode`.
-
----
-
-## Batasan yang diketahui (jujur)
-
-- Seleksi Layer-1 lewat 9router **belum diuji live** di semua lingkungan (fallback deterministik top-5 bila 9router mati).
-- MCP **gateway / figma / github** untested end-to-end (mati default).
-- Routing miss: prompt *"cek CVE dependency"* tanpa hit Layer-0 belum menemukan `security-audit` (lihat miss di `runtime/metrics.json`).
-- Angka retrieval di atas adalah BM25-only pada golden berulang — jangan dibaca sebagai klaim produksi absolut.
 
 ---
 
